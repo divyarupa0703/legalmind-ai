@@ -40,8 +40,9 @@ Create .env file:
 
 ```bash
 GOOGLE_API_KEY=your-api-key-here
-Load it in your code:
 ```
+Load it in your code:
+
 ```bash
 from dotenv import load_dotenv
 import os
