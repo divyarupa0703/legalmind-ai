@@ -22,31 +22,25 @@ Get your API key from Google AI Studio
 
 Option 1 – Set directly:
 
-python
-Copy
-Edit
+```bash
 import google.generativeai as genai
 genai.configure(api_key="YOUR_API_KEY_HERE")
 Option 2 – Use .env file for security:
-
+```
 Create .env file:
 
-ini
-Copy
-Edit
+```bash
 GOOGLE_API_KEY=your-api-key-here
 Load it in your code:
-
-python
-Copy
-Edit
+```
+```bash
 from dotenv import load_dotenv
 import os
 import google.generativeai as genai
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
+```
 - Python 3.8+
 - Google Generative AI SDK
 - ChromaDB
@@ -54,7 +48,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 ```bash
 pip install chromadb PyMuPDF google-generativeai
----
+```
 
 
 
