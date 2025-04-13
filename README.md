@@ -17,6 +17,14 @@ This repository provides a powerful pipeline for processing, chunking, embedding
 
 ## 🛠️ Requirements
 
+- Python 3.8+
+- Google Generative AI SDK
+- ChromaDB
+- PyMuPDF (`fitz`)
+
+```bash
+pip install chromadb PyMuPDF google-generativeai
+```
 #🔑 Setting Up Your Google Gemini API Key
 Get your API key from Google AI Studio
 
@@ -25,8 +33,9 @@ Option 1 – Set directly:
 ```bash
 import google.generativeai as genai
 genai.configure(api_key="YOUR_API_KEY_HERE")
-Option 2 – Use .env file for security:
 ```
+Option 2 – Use .env file for security:
+
 Create .env file:
 
 ```bash
@@ -40,14 +49,6 @@ import google.generativeai as genai
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-```
-- Python 3.8+
-- Google Generative AI SDK
-- ChromaDB
-- PyMuPDF (`fitz`)
-
-```bash
-pip install chromadb PyMuPDF google-generativeai
 ```
 
 
