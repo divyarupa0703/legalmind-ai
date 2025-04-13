@@ -25,7 +25,7 @@ This repository provides a powerful pipeline for processing, chunking, embedding
 ```bash
 pip install chromadb PyMuPDF google-generativeai
 ```
-#🔑 Setting Up Your Google Gemini API Key
+🔑 Setting Up Your Google Gemini API Key
 Get your API key from Google AI Studio
 
 Option 1 – Set directly:
