@@ -1,71 +1,26 @@
- Legal Document QA Pipeline
-A powerful legal question-answering system that processes legal PDFs, extracts key sections, stores embeddings using ChromaDB, and answers queries using Gemini's LLM.
+# 🧠 Legal Gemini QA System
 
-🚀 Features
-✅ Text Extraction from PDF files using PyMuPDF.
+This repository provides a powerful pipeline for processing, chunking, embedding, and querying **Indian legal court documents (PDFs)** using **Google Gemini**, **ChromaDB**, and **PyMuPDF**. It enables both **standard legal QA** and **chain-of-law reasoning** using LLMs.
 
-🧩 Contextual Chunking of legal sections (case info, arguments, court orders, etc.)
+---
 
-🧠 Embeddings via Gemini's Embedding API.
+## 📂 Features
 
-🗄️ Storage & Retrieval with ChromaDB.
+- 🔍 **PDF Parsing** – Extracts text from Indian court judgments using `PyMuPDF`.
+- 🧩 **Legal-Aware Chunking** – Splits text into meaningful sections like case info, petitioner arguments, and final order.
+- 🧠 **Embeddings via Gemini** – Embeds document chunks using Google's `embedding-001` model.
+- 💾 **Vector Storage** – Stores chunks and embeddings with `ChromaDB`.
+- 🧑‍⚖️ **Metadata Extraction** – Extracts court name, judge, case number, petitioner names, and IPC sections.
+- 🤖 **Legal QA** – Asks questions about judgments using standard or step-by-step legal reasoning (Chain-of-Law).
 
-📚 Legal Metadata Extraction (judge, IPC sections, petitioners, etc.)
+---
 
-🧑‍⚖️ Legal QA using Gemini with:
+## 🛠️ Requirements
 
-Standard answers
+- Python 3.8+
+- Google Generative AI SDK
+- ChromaDB
+- PyMuPDF (`fitz`)
 
-Chain-of-Law Reasoning (structured legal reasoning)
-
-📦 Dependencies
-bash
-Copy
-Edit
-pip install pymupdf chromadb google-generativeai
-🧠 Powered By
-PyMuPDF – for parsing PDFs
-
-ChromaDB – vector store
-
-Google Generative AI (Gemini) – for embeddings & answers
-
-🧪 Example Usage
-python
-Copy
-Edit
-if __name__ == "__main__":
-    pdf_path = "path/to/legal_document.pdf"
-    
-    full_text, chunks = process_and_store_pdf(pdf_path)
-    metadata = extract_metadata(full_text)
-
-    question = "What was the final order of the court?"
-    result = legal_qa(question, full_text, reasoning=True)
-
-    print("[Metadata]", metadata)
-    print("[Answer]", result["answer"])
-📂 File Structure
-bash
-Copy
-Edit
-legal_qa_pipeline.py  # Main script
-README.md             # This file
-chroma_db/            # Vector DB folder (auto-created)
-⚖️ Legal-Specific Chunking Includes:
-Case Information
-
-Representation (Advocates)
-
-Charges/Allegations
-
-Petitioner's Arguments
-
-State's Response
-
-Final Court Order
-
-🤖 Modes of Answering
-Mode	Description
-Standard	Direct QA based on context
-Chain-of-Law	Step-by-step legal reasoning
+```bash
+pip install chromadb PyMuPDF google-generativeai
